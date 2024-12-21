@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        app()->make('Uxmal\Backend\Helpers\RegisterCmdQry')
+            ->register(__DIR__.'/../Domains/Public', [
+                'middleware' => [],
+            ]
+        );
     }
 }
